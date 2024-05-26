@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  my_go_ipapp:
+    build: .
+    image: my_go_ipapp
+    container_name: my_go_ipapp
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    networks:
+      - my_go_ipapp_network
+
+networks:
+  my_go_ipapp_network:
+    driver: bridge
